@@ -1,8 +1,19 @@
 <?php
 include "./class/Calculatrice.php";
+function data($data){
+    echo "<pre>";
+    var_dump($data);
+    echo "</pre>";
+}
 
 $calculatrice = new Calculatrice();
+
+if(isset($_POST)){
+    $calculatrice->calcul($_POST['count']);
+}
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
