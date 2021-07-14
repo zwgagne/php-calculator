@@ -1,17 +1,19 @@
 <?php
 include "./class/Calculatrice.php";
-function data($data){
+
+function dd($data){
     echo "<pre>";
     var_dump($data);
     echo "</pre>";
 }
 
 $calculatrice = new Calculatrice();
+$total = "";
 
-if(isset($_POST)){
-    $calculatrice->calcul($_POST['count']);
+
+if(isset($_POST['count'])){
+    $total = $calculatrice->calcul($_POST['count']);
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +25,7 @@ if(isset($_POST)){
     <title>Document</title>
 </head>
 <body>
-
+<h1><?php echo $total; ?></h1>
 <div class="modules">
     <form action="/" method="POST" class="form-2 wrapper modules">
         <div class="grille">
